@@ -9,13 +9,13 @@ Bash regression runner that saves a log and scans it for failures.
 | `mock_api.py` | Small local REST API (`/posts`) used as the test target |
 | `tests/test_posts_api.py` | 16 pytest tests: GET, POST, DELETE, 404/400 cases, response-time check |
 | `tests/conftest.py` | Starts the mock API automatically; supports a real API via `BASE_URL` |
-| `run_tests.sh` | Runs the suite, saves a timestamped log, fails if anything fails |
+| `run_tests.bat ` | Runs the suite, saves a timestamped log, fails if anything fails |
 | `check_logs.sh` | Scans a log and prints passed / failed / error counts |
 
 ## Run it
 ```bash
 pip install -r requirements.txt
-./run_tests.sh                       # tests the local mock API
+./run_tests.bat                        # tests the local mock API
 BASE_URL=https://jsonplaceholder.typicode.com ./run_tests.sh   # a public API
 ```
 When using a public API, run only read tests (`pytest -k "list or single or filter"`)
